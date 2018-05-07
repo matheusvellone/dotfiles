@@ -1,7 +1,7 @@
-# !/bin/sh
+#!/bin/sh
 
-mkdir -p ~/.config/nvim
-ln -s init.vim ~/.config/nvim/init.vim
+mkdir -p /home/$USER/.config/nvim
+ln -s $PWD/init.vim /home/$USER/.config/nvim/init.vim
 
-mkdir -p ~/.config/Code/User
-ln -s vscode.json ~/.config/Code/User/settings.json
+mkdir -p /home/$USER/.config/Code/User
+ln -s $PWD/vscode.json /home/$USER/.config/Code/User/settings.json
