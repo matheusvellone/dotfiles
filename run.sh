@@ -1,6 +1,6 @@
 #!/bin/bash
 
-AVAILABLE_DOTFILES=( "fish" "vim" "vscode" )
+AVAILABLE_DOTFILES=( "fish" "vim" "vscode" "git" )
 
 
 if [ $# -eq 0 ]
@@ -12,7 +12,7 @@ then
 else
     SELECTED_TO_RUN=$1
 
-    if [[ ! $AVAILABLE_DOTFILES =~ $SELECTED_TO_RUN ]]; then
+    if [[ ! ${AVAILABLE_DOTFILES[@]} =~ $SELECTED_TO_RUN ]]; then
         echo "Not a correct dotfile config selected"
         exit 1
     fi

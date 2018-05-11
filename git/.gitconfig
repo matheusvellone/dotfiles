@@ -1,0 +1,16 @@
+[alias]
+	# List aliases
+	aliases = config --get-regexp alias
+
+	# Amend the currently staged files to the latest commit
+	amend = commit --amend --reuse-message=HEAD
+
+	# View the current working tree status using the short format
+	s = status -s
+[user]
+	email = matheusvellone@hotmail.com
+	name = Matheus Peviani Vellone
+[commit]
+	gpgsign = true
+[core]
+	editor = vim

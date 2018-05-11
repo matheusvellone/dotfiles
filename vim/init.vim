@@ -22,6 +22,7 @@ set relativenumber
 set mouse=
 
 set foldmethod=indent
+set nofoldenable
 
 let mapleader = ","
 
