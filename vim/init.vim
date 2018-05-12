@@ -17,7 +17,7 @@ syntax on
 
 colorscheme gruvbox
 set background=dark
-
+set number
 set relativenumber
 set mouse=
 
@@ -31,7 +31,9 @@ nnoremap <leader>ev :edit ~/.config/nvim/init.vim<CR>
 nnoremap <leader>sv :source ~/.config/nvim/init.vim<CR>
 nnoremap <leader>pi :PlugInstall<CR>
 nnoremap <leader>t :tabe %<CR>
-nnoremap <leader>q :q<CR>
+nnoremap <leader>d gt<CR>
+nnoremap <leader>a gT<CR>
+nnoremap <leader>h :nohl<CR>
 nnoremap <leader>vs <C-w>v<CR>
 nnoremap <Space> za<CR>
 
