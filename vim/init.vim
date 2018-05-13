@@ -28,6 +28,8 @@ set background=dark
 set number
 set relativenumber
 
+set cc=80,120
+
 set foldmethod=indent
 set nofoldenable
 nnoremap <Space> za
