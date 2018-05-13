@@ -13,6 +13,7 @@ Plug 'morhetz/gruvbox'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 call plug#end()
 
@@ -28,15 +29,21 @@ set relativenumber
 
 set foldmethod=indent
 set nofoldenable
-nnoremap <Space> za<CR>
+nnoremap <Space> za
 
 nnoremap <leader>ev :edit ~/.config/nvim/init.vim<CR>
-nnoremap <leader>sv :source ~/.config/nvim/init.vim<CR>
-nnoremap <leader>t :tabe %<CR>
-nnoremap <leader>d gt<CR>
-nnoremap <leader>a gT<CR>
+nnoremap <leader>src :source ~/.config/nvim/init.vim<CR>
 nnoremap <leader>h :nohl<CR>
-nnoremap <leader>vs <C-w>v<CR>
+
+" Window management
+nnoremap <leader>t :tabe %<CR>
+nnoremap <leader>d gt
+nnoremap <leader>a gT
+
+nnoremap <leader>sh <C-w>s
+nnoremap <leader>sv <C-w>v
+nnoremap <leader>zw <C-w>\|<C-w>_
+nnoremap <leader>zr <C-w>=
 
 set mouse=
 noremap <Up> <NOP>
@@ -47,7 +54,9 @@ noremap <Right> <NOP>
 " NERDTree
 let NERDTreeWinSize=60
 let NERDTreeShowHidden=1
-nnoremap <leader>1 :NERDTreeToggle<CR>
+let NERDTreeQuitOnOpen=1
+nnoremap <leader>1 :NERDTreeFind<CR>
+nnoremap <leader>2 :NERDTreeToggle<CR>
 
 " Plugins
 nnoremap <leader>pi :PlugInstall<CR>
@@ -58,3 +67,6 @@ let g:ctrlp_show_hidden = 1
 
 " Airline
 let g:airline_theme='murmur'
+
+" Deoplete
+let g:deoplete#enable_at_startup = 1
