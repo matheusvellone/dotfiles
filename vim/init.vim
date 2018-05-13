@@ -10,6 +10,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
+Plug 'neomake/neomake'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-airline/vim-airline-themes'
@@ -60,6 +61,9 @@ nnoremap <leader>2 :NERDTreeToggle<CR>
 
 " Plugins
 nnoremap <leader>pi :PlugInstall<CR>
+
+" Neomake
+let g:neomake_javascript_eslint_exe = $PWD .'/node_modules/.bin/eslint'
 
 " ctrlp
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
