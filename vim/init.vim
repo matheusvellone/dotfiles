@@ -52,6 +52,8 @@ nnoremap <leader>sv <C-w>v
 nnoremap <leader>zw <C-w>\|<C-w>_
 nnoremap <leader>zr <C-w>=
 
+vnoremap <leader>s :sort<CR>
+
 set mouse=
 noremap <Up> <NOP>
 noremap <Down> <NOP>
