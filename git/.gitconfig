@@ -15,7 +15,7 @@
 [commit]
 	gpgsign = true
 [core]
-	editor = vim
+	editor = nvim
 [merge]
 	tool = vscode
 [mergetool "vscode"]
