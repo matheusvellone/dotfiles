@@ -19,6 +19,8 @@ Plug 'chriskempson/base16-vim'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
 Plug 'junegunn/fzf.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
@@ -31,6 +33,8 @@ set background=dark
 
 set number
 set relativenumber
+
+set inccommand=split
 
 set cc=80,120
 
