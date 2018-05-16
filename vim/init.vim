@@ -65,7 +65,11 @@ noremap <Left> <NOP>
 noremap <Right> <NOP>
 
 " Functions
-function! MyOnBattery()
+function! OnBattery()
+  if empty(glob('/sys/class/power_supply/AC/online'))
+    return 0
+  endif
+
   return readfile('/sys/class/power_supply/AC/online') == ['0']
 endfunction
 
@@ -82,7 +86,7 @@ nnoremap <leader>pi :PlugInstall<CR>
 " Neomake
 let g:neomake_javascript_eslint_exe = $PWD .'/node_modules/.bin/eslint'
 
-if MyOnBattery()
+if OnBattery()
   call neomake#configure#automake('w')
 else
   call neomake#configure#automake('nw', 1000)
