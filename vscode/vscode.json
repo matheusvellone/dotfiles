@@ -1,5 +1,8 @@
 {
     "gitlens.advanced.messages": {
         "suppressShowKeyBindingsNotice": true
-    }
+    },
+    "window.zoomLevel": 0,
+    "explorer.confirmDelete": false,
+    "search.followSymlinks": false
 }
