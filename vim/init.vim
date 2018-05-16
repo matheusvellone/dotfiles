@@ -33,6 +33,7 @@ set background=dark
 
 set number
 set relativenumber
+set cursorline
 
 set inccommand=split
 
@@ -53,6 +54,13 @@ nnoremap <leader>a gT
 
 nnoremap <leader>sh <C-w>s
 nnoremap <leader>sv <C-w>v
+set fillchars+=vert:│
+
+nnoremap <S-Down> <c-w>+
+nnoremap <S-Up> <c-w>-
+nnoremap <S-Left> <c-w><
+nnoremap <S-Right> <c-w>>
+
 nnoremap <leader>zw <C-w>\|<C-w>_
 nnoremap <leader>zr <C-w>=
 

@@ -1,15 +1,15 @@
 [alias]
-	# List aliases
 	aliases = config --get-regexp alias
 
-	# Amend the currently staged files to the latest commit
 	amend = commit --amend --reuse-message=HEAD
 
-	# View the current working tree status using the short format
-	s = status -s
-
+	s = status
 	a = add
+	ap = add -p
+	pf = push origin HEAD --force-with-lease
+	po = pull origin HEAD --rebase
 [user]
+	signingkey = AAD459565BD6239C
 	email = matheusvellone@hotmail.com
 	name = Matheus Peviani Vellone
 [commit]
