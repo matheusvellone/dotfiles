@@ -6,6 +6,7 @@
 	s = status
 	a = add
 	ap = add -p
+	cp = checkout -p
 	pf = push origin HEAD --force-with-lease
 	po = pull origin HEAD --rebase
 [user]
