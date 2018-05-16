@@ -9,7 +9,6 @@
 	pf = push origin HEAD --force-with-lease
 	po = pull origin HEAD --rebase
 [user]
-	signingkey = AAD459565BD6239C
 	email = matheusvellone@hotmail.com
 	name = Matheus Peviani Vellone
 [commit]
