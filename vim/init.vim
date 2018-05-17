@@ -73,6 +73,9 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
+nnoremap <leader>con :set clipboard=unnamedplus<CR>
+nnoremap <leader>coff :set clipboard=<CR>
+
 " Functions
 function! OnBattery()
   if empty(glob('/sys/class/power_supply/AC/online'))
