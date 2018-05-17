@@ -8,7 +8,7 @@
 	ap = add -p
 	cp = checkout -p
 	pf = push origin HEAD --force-with-lease
-	po = pull origin HEAD --rebase
+	po = pull origin HEAD
 [user]
 	email = matheusvellone@hotmail.com
 	name = Matheus Peviani Vellone
