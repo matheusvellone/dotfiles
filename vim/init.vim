@@ -21,6 +21,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
 Plug 'junegunn/fzf.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'sheerun/vim-polyglot'
+Plug 'ntpeters/vim-better-whitespace'
 
 call plug#end()
 
@@ -112,3 +113,6 @@ let g:deoplete#enable_at_startup = 1
 
 " fzf
 tnoremap <Esc> <C-\><C-n>:q<CR>
+
+" better whitespace
+let g:better_whitespace_enabled=1
