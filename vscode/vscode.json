@@ -1,8 +1,40 @@
 {
-    "gitlens.advanced.messages": {
-        "suppressShowKeyBindingsNotice": true
-    },
-    "window.zoomLevel": 0,
-    "explorer.confirmDelete": false,
-    "search.followSymlinks": false
+  "dateTime.showDayOfMonth": true,
+  "dateTime.showDayOfWeek": true,
+  "dateTime.showMonth": true,
+  "diffEditor.ignoreTrimWhitespace": true,
+  "editor.dragAndDrop": false,
+  "editor.formatOnPaste": true,
+  "editor.renderControlCharacters": false,
+  "editor.renderWhitespace": "all",
+  "editor.rulers": [
+    80,
+    120
+  ],
+  "editor.showFoldingControls": "always",
+  "editor.tabSize": 2,
+  "eslint.alwaysShowStatus": true,
+  "eslint.autoFixOnSave": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.openEditors.visible": 0,
+  "files.autoSave": "off",
+  "gitlens.advanced.messages": {
+    "suppressCommitHasNoPreviousCommitWarning": false,
+    "suppressCommitNotFoundWarning": false,
+    "suppressFileNotUnderSourceControlWarning": false,
+    "suppressGitVersionWarning": false,
+    "suppressLineUncommittedWarning": true,
+    "suppressNoRepositoryWarning": false,
+    "suppressResultsExplorerNotice": false,
+    "suppressShowKeyBindingsNotice": true
+  },
+  "gitlens.historyExplorer.enabled": true,
+  "search.followSymlinks": false,
+  "window.restoreFullscreen": true,
+  "window.zoomLevel": 0,
+  "workbench.colorTheme": "Monokai",
+  "workbench.editor.openPositioning": "first",
+  "workbench.panel.defaultLocation": "bottom",
+  "workbench.startupEditor": "newUntitledFile"
 }
