@@ -5,6 +5,7 @@
 
 	s = status
 	a = add
+	l = log
 	ap = add -p
 	cp = checkout -p
 	p = push origin HEAD
