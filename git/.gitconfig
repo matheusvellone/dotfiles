@@ -10,6 +10,7 @@
 	p = push origin HEAD
 	pf = push origin HEAD --force-with-lease
 	po = pull origin HEAD
+	por = pull origin HEAD --rebase
 	aa = add -A
 [user]
 	email = matheusvellone@hotmail.com
