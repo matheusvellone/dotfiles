@@ -41,6 +41,7 @@ set inccommand=split
 set cc=80,120
 
 set foldmethod=indent
+set foldlevel=50
 set nofoldenable
 nnoremap <Space> za
 
