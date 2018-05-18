@@ -5,6 +5,7 @@
 
 	s = status
 	a = add
+	c = commit
 	l = log
 	ap = add -p
 	cp = checkout -p
