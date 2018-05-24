@@ -23,6 +23,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'sheerun/vim-polyglot'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
