@@ -47,14 +47,16 @@ set foldlevel=50
 set nofoldenable
 nnoremap <Space> za
 
-nnoremap <leader>ev :edit ~/.config/nvim/init.vim<CR>
+nnoremap <leader>ve :edit ~/.config/nvim/init.vim<CR>
 nnoremap <leader>src :source ~/.config/nvim/init.vim<CR>
 nnoremap <leader>h :nohl<CR>
 
 " Window management
 nnoremap <leader>t :tabe %<CR>
-nnoremap <leader>d gt
-nnoremap <leader>a gT
+nnoremap <leader>a <C-w>h
+nnoremap <leader>d <C-w>l
+nnoremap <leader>e gt
+nnoremap <leader>q gT
 
 nnoremap <leader>sh <C-w>s
 nnoremap <leader>sv <C-w>v
