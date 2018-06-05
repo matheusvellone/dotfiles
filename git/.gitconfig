@@ -18,6 +18,8 @@
 	ra = rebase --abort
 	rc = rebase --continue
 	rs = rebase --skip
+	d = diff
+	r = reset
 [user]
 	email = matheusvellone@hotmail.com
 	name = Matheus Peviani Vellone

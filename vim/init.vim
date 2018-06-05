@@ -42,10 +42,15 @@ set inccommand=split
 
 set cc=80,120
 
+set ignorecase
+set smartcase
+set nohlsearch
+
 set foldmethod=indent
 set foldlevel=50
 set nofoldenable
 nnoremap <Space> za
+nnoremap <F5> :e<CR>
 
 nnoremap <leader>ve :edit ~/.config/nvim/init.vim<CR>
 nnoremap <leader>src :source ~/.config/nvim/init.vim<CR>
