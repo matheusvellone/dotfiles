@@ -3,23 +3,28 @@
 
 	amend = commit --amend --reuse-message=HEAD
 
-	s = status
 	a = add
-	c = commit
-	l = log
+	aa = add -A
 	ap = add -p
+	c = commit
 	cp = checkout -p
+	d = diff
+	l = log
+	ma = merge --abort
 	p = push origin HEAD
 	pf = push origin HEAD --force-with-lease
 	po = pull origin HEAD
 	por = pull origin HEAD --rebase
-	aa = add -A
-	ma = merge --abort
+	r = reset
 	ra = rebase --abort
 	rc = rebase --continue
 	rs = rebase --skip
-	d = diff
-	r = reset
+	s = status
+	sa = stash apply
+	sc = stash clear
+	sl = stash list
+	sp = stash pop
+	st = stash
 [user]
 	email = matheusvellone@hotmail.com
 	name = Matheus Peviani Vellone
