@@ -7,6 +7,8 @@
 	aa = add -A
 	ap = add -p
 	c = commit
+	cc = checkout
+	ccb = checkout -b
 	cp = checkout -p
 	d = diff
 	l = log
