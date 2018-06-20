@@ -12,6 +12,7 @@
 	cp = checkout -p
 	d = diff
 	l = log
+	lo = log --oneline
 	ma = merge --abort
 	p = push origin HEAD
 	pf = push origin HEAD --force-with-lease
