@@ -18,6 +18,7 @@
 	pf = push origin HEAD --force-with-lease
 	po = pull origin HEAD
 	por = pull origin HEAD --rebase
+	prune = pull --prune
 	r = reset
 	ra = rebase --abort
 	rc = rebase --continue
