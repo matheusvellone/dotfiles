@@ -129,3 +129,7 @@ tnoremap <Esc> <C-\><C-n>:q<CR>
 
 " better whitespace
 let g:better_whitespace_enabled=1
+
+" nerdcommenter
+let g:NERDSpaceDelims = 1
+let g:NERDTrimTrailingWhitespace = 1
