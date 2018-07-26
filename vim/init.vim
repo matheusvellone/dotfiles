@@ -37,6 +37,7 @@ set background=dark
 set number
 set relativenumber
 set cursorline
+set autochdir
 
 set inccommand=split
 
@@ -51,6 +52,8 @@ set foldlevel=50
 set nofoldenable
 nnoremap <Space> za
 nnoremap <F5> :e<CR>
+
+imap jk <Esc>
 
 nnoremap <leader>ve :edit ~/.config/nvim/init.vim<CR>
 nnoremap <leader>src :source ~/.config/nvim/init.vim<CR>
