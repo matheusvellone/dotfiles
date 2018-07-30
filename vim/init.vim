@@ -108,6 +108,8 @@ nnoremap <leader>2 :NERDTreeToggle<CR>
 " Plugins
 nnoremap <leader>pi :PlugInstall<CR>
 
+" Linting
+nnoremap <leader>l gg=G''
 " Neomake
 let g:neomake_javascript_eslint_exe = $PWD .'/node_modules/.bin/eslint'
 
