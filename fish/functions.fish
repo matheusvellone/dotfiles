@@ -11,3 +11,7 @@ function git-delete-tag
     git tag -d $argv
     git push origin :refs/tags/$argv
 end
+
+function git-open-conflict
+    git status -s | grep 'UU\|AA' | awk '{print $2}' | xargs code
+end
