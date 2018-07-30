@@ -40,6 +40,7 @@
 	editor = nvim
 [merge]
 	tool = vscode
+	keepBackup = false
 [mergetool "vscode"]
 	cmd = code --wait $MERGED
 [diff]
