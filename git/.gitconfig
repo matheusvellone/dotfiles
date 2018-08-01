@@ -9,6 +9,7 @@
 	c = commit
 	conflict = mergetool
 	cc = checkout
+	ccm = checkout master
 	ccb = checkout -b
 	cp = checkout -p
 	d = diff
