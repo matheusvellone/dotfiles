@@ -22,6 +22,7 @@
 	prune = pull --prune
 	r = reset
 	ra = rebase --abort
+	rbi = rebase -i --preserve-merges
 	rc = rebase --continue
 	rs = rebase --skip
 	s = status
