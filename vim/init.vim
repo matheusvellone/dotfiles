@@ -38,6 +38,7 @@ set number
 set relativenumber
 set cursorline
 set autochdir
+set noswapfile
 
 set inccommand=split
 
