@@ -6,11 +6,13 @@
 	a = add
 	aa = add -A
 	ap = add -p
+	an = add -N
 	c = commit
 	conflict = mergetool
 	cc = checkout
 	ccm = checkout master
 	ccb = checkout -b
+	cf = clean -f
 	cp = checkout -p
 	d = diff
 	l = log
