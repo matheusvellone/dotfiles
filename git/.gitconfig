@@ -33,7 +33,6 @@
 	sp = stash pop
 	st = stash
 [user]
-	signingkey = 2D383A3984F2B266
 	email = matheusvellone@hotmail.com
 	name = Matheus Peviani Vellone
 [commit]
