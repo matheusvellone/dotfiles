@@ -6,7 +6,7 @@
 	a = add
 	aa = add -A
 	ap = add -p
-	an = add -N
+	an = add -N .
 	c = commit
 	conflict = mergetool
 	cc = checkout
