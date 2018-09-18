@@ -1,6 +1,6 @@
 #!/bin/bash
 
-AVAILABLE_DOTFILES=( "fish" "vim" "vscode" "git" )
+AVAILABLE_DOTFILES=( "fish" "vim" "vscode" "git" "tmux" )
 
 
 if [ $# -eq 0 ]
@@ -16,7 +16,7 @@ else
         echo "Not a correct dotfile config selected"
         exit 1
     fi
-    
+
     source ./run/$SELECTED_TO_RUN.sh
 fi
 
