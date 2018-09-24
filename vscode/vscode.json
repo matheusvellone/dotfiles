@@ -1,7 +1,4 @@
 {
-  "dateTime.showDayOfMonth": true,
-  "dateTime.showDayOfWeek": true,
-  "dateTime.showMonth": true,
   "diffEditor.ignoreTrimWhitespace": true,
   "editor.dragAndDrop": false,
   "editor.formatOnPaste": true,
@@ -35,5 +32,6 @@
   "workbench.colorTheme": "Monokai",
   "workbench.editor.openPositioning": "first",
   "workbench.panel.defaultLocation": "bottom",
-  "workbench.startupEditor": "newUntitledFile"
+  "workbench.startupEditor": "newUntitledFile",
+  "javascript.updateImportsOnFileMove.enabled": "always"
 }
