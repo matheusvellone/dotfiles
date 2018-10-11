@@ -30,6 +30,7 @@
 	ra = rebase --abort
 	rbi = rebase -i --preserve-merges
 	rc = rebase --continue
+	rh = reset --hard origin/HEAD
 	rs = rebase --skip
 	s = status
 	sa = stash apply
