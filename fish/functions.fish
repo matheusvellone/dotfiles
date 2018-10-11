@@ -12,6 +12,10 @@ function git-delete-tag
     git push origin :refs/tags/$argv
 end
 
+function tns
+    tmux new -s $argv
+end
+
 function git-open-conflict
     git status -s | grep 'UU\|AA' | awk '{print $2}' | xargs code
 end
