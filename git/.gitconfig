@@ -17,6 +17,7 @@
 	d = diff
 	dc = diff --cached
 	fo = fetch origin
+	group = shortlog -s -n
 	l = log
 	lo = log --oneline
 	ma = merge --abort
