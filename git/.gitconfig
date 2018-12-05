@@ -31,6 +31,7 @@
 	ra = rebase --abort
 	rbi = rebase -i --preserve-merges
 	rc = rebase --continue
+	rename = commit --amend
 	rh = reset --hard origin/HEAD
 	rs = rebase --skip
 	s = status
