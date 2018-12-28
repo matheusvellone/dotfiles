@@ -18,8 +18,8 @@
 	dc = diff --cached
 	fo = fetch origin
 	group = shortlog -s -n
-	l = log
-	lo = log --oneline
+	l = log --decorate
+	lo = log --oneline --decorate
 	ma = merge --abort
 	p = push origin HEAD
 	pf = push origin HEAD --force-with-lease
