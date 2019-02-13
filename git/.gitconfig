@@ -28,6 +28,7 @@
 	por = pull origin HEAD --rebase
 	prune = pull --prune
 	r = reset
+	rp = reset -p
 	ra = rebase --abort
 	rbi = rebase -i --preserve-merges
 	rc = rebase --continue
