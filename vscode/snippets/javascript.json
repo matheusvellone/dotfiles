@@ -1,0 +1,16 @@
+{
+	"Simple log": {
+		"prefix": "log",
+		"body": [
+			"console.log($1)",
+		],
+		"description": "Log output to console",
+	},
+	"Log expanded object": {
+		"prefix": "logObject",
+		"body": [
+			"console.log(JSON.stringify($1, null, 2))",
+		],
+		"description": "Log object to console",
+	},
+}
