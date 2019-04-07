@@ -33,5 +33,6 @@
   "workbench.editor.openPositioning": "first",
   "workbench.panel.defaultLocation": "bottom",
   "workbench.startupEditor": "newUntitledFile",
-  "javascript.updateImportsOnFileMove.enabled": "always"
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "breadcrumbs.enabled": true
 }
