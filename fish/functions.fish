@@ -19,3 +19,7 @@ end
 function git-open-conflict
     git status -s | grep 'UU\|AA' | awk '{print $2}' | xargs code
 end
+
+function clone
+    git clone git@github.com:$argv[1].git
+end
