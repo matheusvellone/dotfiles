@@ -35,6 +35,7 @@
 	rename = commit --amend
 	rh = reset --hard origin/HEAD
 	rs = rebase --skip
+	rw = commit --amend
 	s = status
 	sa = stash apply
 	sc = stash clear
