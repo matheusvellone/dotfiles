@@ -1,5 +1,7 @@
 echo "Running tmux configuration"
 
+sudo apt-get install -y tmux
+
 TPM_DIR=~/.tmux/plugins/tpm
 
 if [ ! -d "$TPM_DIR" ]; then
