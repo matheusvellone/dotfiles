@@ -1,6 +1,6 @@
 #!/bin/bash
 
-AVAILABLE_DOTFILES=( "fish" "vim" "vscode" "git" "tmux" "tilix" )
+AVAILABLE_DOTFILES=( "fish" "vim" "vscode" "git" "tmux" "tilix" "generic")
 
 
 if [ $# -eq 0 ]
