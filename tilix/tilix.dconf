@@ -1,0 +1,11 @@
+[/]
+terminal-title-style='none'
+quake-specific-monitor=0
+
+[profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d]
+visible-name='Default'
+scroll-on-output=true
+cursor-shape='ibeam'
+use-system-font=false
+font='Hack Nerd Font 10'
+scrollback-lines=20000
