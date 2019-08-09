@@ -43,8 +43,9 @@
 	sp = stash pop
 	st = stash
 [user]
-	email = matheusvellone@hotmail.com
+	email = matheusvellone@gmail.com
 	name = Matheus Peviani Vellone
+	signingkey = F7A14B715BE093E8
 [commit]
 	gpgsign = true
 [core]
