@@ -4,3 +4,6 @@ sudo apt-get install -y fish
 
 mkdir -p ~/.config/fish
 echo "source $PWD/fish/main.fish" > $HOME/.config/fish/config.fish
+
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
