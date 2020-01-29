@@ -1,7 +1,6 @@
 {
   "diffEditor.ignoreTrimWhitespace": true,
   "editor.dragAndDrop": false,
-  "editor.formatOnPaste": true,
   "editor.renderControlCharacters": false,
   "editor.renderWhitespace": "all",
   "editor.rulers": [
@@ -34,5 +33,8 @@
   "workbench.panel.defaultLocation": "bottom",
   "workbench.startupEditor": "newUntitledFile",
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "breadcrumbs.enabled": true
+  "breadcrumbs.enabled": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": false
+  }
 }
