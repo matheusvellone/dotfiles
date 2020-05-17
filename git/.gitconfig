@@ -42,6 +42,7 @@
 	sl = stash list
 	sp = stash pop
 	st = stash
+	ignore = "!gi() { curl -sL https://www.gitignore.io/api/$@ ;}; gi"
 [user]
 	email = matheusvellone@gmail.com
 	name = Matheus Peviani Vellone
