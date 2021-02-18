@@ -16,6 +16,7 @@
 	cp = checkout -p
 	d = diff
 	dc = diff --cached
+	fa = fetch --all
 	fo = fetch origin
 	group = shortlog -s -n
 	l = log --decorate
