@@ -12,7 +12,7 @@
 	cc = checkout
 	ccm = checkout master
 	ccb = checkout -b
-	cf = clean -f
+	cf = clean -f -d
 	cp = checkout -p
 	d = diff
 	dc = diff --cached
