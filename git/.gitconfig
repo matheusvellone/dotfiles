@@ -11,6 +11,7 @@
 	conflict = mergetool
 	cc = checkout
 	ccm = checkout master
+	ccmn = checkout main
 	ccb = checkout -b
 	cf = clean -f -d
 	cp = checkout -p
@@ -43,6 +44,7 @@
 	sl = stash list
 	sp = stash pop
 	st = stash
+	clean-branches = "!git branch -vv | grep 'origin/.*: gone]' | awk '{print $1}' | xargs git branch -D"
 	ignore = "!gi() { curl -sL https://www.gitignore.io/api/$@ ;}; gi"
 [user]
 	email = matheusvellone@gmail.com
