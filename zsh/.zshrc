@@ -137,6 +137,8 @@ alias hg='history | grep'
 alias vim='nvim'
 alias ll='ls -lh'
 
+alias dclean='docker ps -aq | xargs docker stop; docker ps -aq | xargs docker rm'
+
 alias windows='sudo grub-reboot "$(grep -i windows /boot/grub/grub.cfg | cut -d "\"" -f 2)"'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
