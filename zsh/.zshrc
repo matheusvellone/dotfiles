@@ -138,6 +138,7 @@ alias vim='nvim'
 alias ll='ls -lh'
 
 alias dclean='docker ps -aq | xargs docker stop; docker ps -aq | xargs docker rm'
+alias ip='curl -4 ifconfig.io'
 
 alias windows='sudo grub-reboot "$(grep -i windows /boot/grub/grub.cfg | cut -d "\"" -f 2)"'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
