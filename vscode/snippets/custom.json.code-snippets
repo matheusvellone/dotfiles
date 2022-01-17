@@ -1,0 +1,9 @@
+{
+	"Markdown Spoiler": {
+		"prefix": "spoiler",
+		"body": [
+			"<details>\n\t<summary>\n\t\t$1\n\t</summary>\n\n$2\n</details>",
+		],
+		"description": "Create a markdown spoiler",
+	}
+}

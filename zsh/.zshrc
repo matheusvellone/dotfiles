@@ -139,8 +139,21 @@ alias ll='ls -lh'
 
 alias dclean='docker ps -aq | xargs docker stop; docker ps -aq | xargs docker rm'
 alias ip='curl -4 ifconfig.io'
+alias unlock='echo "export BW_SESSION=$(bw unlock --raw)" >> ~/.zprofile && source ~/.zprofile'
 
-alias windows='sudo grub-reboot "$(grep -i windows /boot/grub/grub.cfg | cut -d "\"" -f 2)"'
+2fa() {
+    bw get totp $1 | xclip -selection clipboard && echo "Copied $1 password to clipboard :)"
+
+    notify-send '2FA token copied to clipboard' $1
+}
+
+password() {
+    bw get password $1 | xclip -selection clipboard && echo "Copied $1 password to clipboard :)"
+
+    notify-send 'Password copied to clipboard' $1
+}
+
+alias windows='sudo grub-reboot "$(grep -i windows /boot/grub/grub.cfg | cut -d "\"" -f 2)" && sudo reboot now'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 

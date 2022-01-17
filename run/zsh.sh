@@ -1,6 +1,7 @@
 echo "Running zsh dotfile configuration"
 
-sudo apt install gawk
+sudo apt install gawk xclip
+sudo snap install bw
 
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
