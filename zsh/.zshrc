@@ -5,11 +5,25 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+IS_WSL=false
+IS_MAC=false
+IS_LINUX=false
+
+if [[ ! -z $WSL_DISTRO_NAME ]] then
+  IS_WSL=true
+fi
+
+if [ "$(uname)" = "Darwin" ]; then
+  IS_MAC=true
+elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
+  IS_LINUX=true
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/matheus/.oh-my-zsh"
+export ZSH="/home/$USER/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -99,6 +113,8 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+setopt histignoredups
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -135,31 +151,56 @@ alias hg='history | grep'
 
 # Aliases
 alias vim='nvim'
+alias ls='lsd'
 alias ll='ls -lh'
+alias cat='bat'
+alias lua='lua5.3'
 
 alias dclean='docker ps -aq | xargs docker stop; docker ps -aq | xargs docker rm'
-alias ip='curl -4 ifconfig.io'
+alias my_ip='curl -4 ifconfig.io'
 alias unlock='echo "export BW_SESSION=$(bw unlock --raw)" >> ~/.zprofile && source ~/.zprofile'
 
 2fa() {
-    bw get totp $1 | xclip -selection clipboard && echo "Copied $1 password to clipboard :)"
+    TOTP=$(bw get totp $1)
 
-    notify-send '2FA token copied to clipboard' $1
+    $IS_WSL && (echo $TOTP | clip.exe)
+    $IS_LINUX && ! $IS_WSL && echo $TOTP | xclip -selection clipboard
+
+    echo "Copied $1 ($TOTP) 2fa token to clipboard :)"
 }
 
 password() {
-    bw get password $1 | xclip -selection clipboard && echo "Copied $1 password to clipboard :)"
+    PASSWORD=$(bw get password $1)
 
-    notify-send 'Password copied to clipboard' $1
+    $IS_WSL && (echo $PASSWORD | clip.exe)
+    $IS_LINUX && ! $IS_WSL && echo $PASSWORD | xclip -selection clipboard
+
+    echo "Copied $1 password to clipboard :)"
+}
+
+declare -A ssm_data_profile
+declare -A ssm_data_instance
+
+ssm() {
+  echo "Starting session on $1"
+  env AWS_REGION=us-east-1 AWS_PROFILE=${ssm_data_profile[$1]} aws ssm start-session --target ${ssm_data_instance[$1]} --document-name AWS-StartInteractiveCommand --parameters command="bash"
 }
 
 alias windows='sudo grub-reboot "$(grep -i windows /boot/grub/grub.cfg | cut -d "\"" -f 2)" && sudo reboot now'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-function expand-alias() {
-	zle _expand_alias
-	zle self-insert
-}
-zle -N expand-alias
-bindkey -M main ' ' expand-alias
+# function expand-alias() {
+# 	zle _expand_alias
+# 	zle self-insert
+# }
+# zle -N expand-alias
+# bindkey -M main ' ' expand-alias
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export GPG_TTY=$(tty)
+export BROWSER=/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe
+PATH=$HOME/.local/bin:$PATH
+[[ -s "/home/vellone/.gvm/scripts/gvm" ]] && source "/home/vellone/.gvm/scripts/gvm"
+
+[ -f ~/dotfiles/zsh/pagarme.zsh ] && source ~/dotfiles/zsh/pagarme.zsh
