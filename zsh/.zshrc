@@ -210,3 +210,7 @@ PATH=$HOME/.local/bin:$PATH
 [[ -s "/home/vellone/.gvm/scripts/gvm" ]] && source "/home/vellone/.gvm/scripts/gvm"
 
 [ -f ~/dotfiles/zsh/pagarme.zsh ] && source ~/dotfiles/zsh/pagarme.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
