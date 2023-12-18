@@ -82,7 +82,8 @@ zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-docker"
 zplug "zsh-users/zsh-history-substring-search"
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#888888"
+
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=245"
 
 if ! zplug check; then
     printf "Install? [y/N]: "
@@ -152,7 +153,7 @@ alias hg='history | grep'
 # Aliases
 alias vim='nvim'
 alias ls='lsd'
-alias ll='ls -lh'
+alias ll='ls -lha'
 alias cat='bat'
 alias lua='lua5.3'
 
@@ -178,12 +179,17 @@ password() {
     echo "Copied $1 password to clipboard :)"
 }
 
+aws_login() {
+  eval "$(aws configure export-credentials --profile $1 --format env)"
+}
+
 declare -A ssm_data_profile
 declare -A ssm_data_instance
 
 ssm() {
   echo "Starting session on $1"
-  env AWS_REGION=us-east-1 AWS_PROFILE=${ssm_data_profile[$1]} aws ssm start-session --target ${ssm_data_instance[$1]} --document-name AWS-StartInteractiveCommand --parameters command="bash"
+  
+  aws ssm start-session --region us-east-1 --target ${ssm_data_instance[$1]:-$1} --document-name AWS-StartInteractiveCommand --parameters command="bash"
 }
 
 alias windows='sudo grub-reboot "$(grep -i windows /boot/grub/grub.cfg | cut -d "\"" -f 2)" && sudo reboot now'
@@ -198,7 +204,7 @@ alias windows='sudo grub-reboot "$(grep -i windows /boot/grub/grub.cfg | cut -d 
 # bindkey -M main ' ' expand-alias
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export GPG_TTY=$(tty)
+export GPG_TTY=$TTY
 export BROWSER=/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe
 PATH=$HOME/.local/bin:$PATH
 [[ -s "/home/vellone/.gvm/scripts/gvm" ]] && source "/home/vellone/.gvm/scripts/gvm"

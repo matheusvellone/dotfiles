@@ -16,7 +16,9 @@
 	cf = clean -f -d
 	cp = checkout -p
 	d = diff
+	dw = diff -w
 	dc = diff --cached
+	dcw = diff --cached -w
 	fa = fetch --all
 	fo = fetch origin
 	group = shortlog -s -n
@@ -31,11 +33,11 @@
 	prune = pull --prune
 	r = reset
 	rp = reset -p
-	ra = rebase --abort
-	rbi = rebase -i --preserve-merges
+	rba = rebase --abort
+	rbi = rebase -i --rebase-merges
 	rc = rebase --continue
 	rename = commit --amend
-	rh = reset --hard origin/HEAD
+	rh = reset --hard
 	rs = rebase --skip
 	rw = commit --amend
 	s = status
@@ -44,12 +46,13 @@
 	sl = stash list
 	sp = stash pop
 	st = stash
-	clean-branches = "!git branch -vv | grep 'origin/.*: gone]' | awk '{print $1}' | xargs git branch -D"
+	wip = commit -nm "wip"
+	# clean-branches = "!git branch --merged | egrep -v '(^\*|master|main|dev)' | xargs git branch -d"
 	ignore = "!gi() { curl -sL https://www.gitignore.io/api/$@ ;}; gi"
 [user]
 	email = matheusvellone@gmail.com
 	name = Matheus Peviani Vellone
-	signingkey = F7A14B715BE093E8
+	signingkey = C68870356B1788DBE331DACEF7A14B715BE093E8
 [commit]
 	gpgsign = true
 [core]
