@@ -147,7 +147,7 @@ alias g='git'
 alias t='tmux'
 alias te='terraform'
 alias d='docker'
-alias dc='docker-compose'
+alias dc='docker compose'
 alias hg='history | grep'
 
 # Aliases
@@ -188,7 +188,7 @@ declare -A ssm_data_instance
 
 ssm() {
   echo "Starting session on $1"
-  
+
   aws ssm start-session --region us-east-1 --target ${ssm_data_instance[$1]:-$1} --document-name AWS-StartInteractiveCommand --parameters command="bash"
 }
 
@@ -214,3 +214,5 @@ PATH=$HOME/.local/bin:$PATH
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+zstyle ':completion::complete:make:*:targets' call-command true
