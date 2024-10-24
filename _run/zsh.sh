@@ -20,4 +20,6 @@ mkdir -p .local/bin
 ln -s /usr/bin/batcat ~/.local/bin/bat
 
 # lsd
-sudo apt install lsd -y
+wget https://github.com/lsd-rs/lsd/releases/download/v1.1.5/lsd-musl_1.1.5_amd64.deb
+sudo dpkg -i lsd-musl_1.1.5_amd64.deb
+rm lsd-musl_1.1.5_amd64.deb
