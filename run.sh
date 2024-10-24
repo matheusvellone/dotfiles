@@ -7,7 +7,7 @@ if [ $# -eq 0 ]
 then
     for element in ${AVAILABLE_DOTFILES[@]}
     do
-        source ./run/$element.sh
+        source ./_run/$element.sh
     done
 else
     SELECTED_TO_RUN=$1
