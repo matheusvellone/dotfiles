@@ -1,6 +1,6 @@
 #!/bin/bash
 
-AVAILABLE_DOTFILES=( "fish" "vim" "vscode" "git" "tmux" "tilix" "zsh" "generic")
+AVAILABLE_DOTFILES=( "vim" "vscode" "git" "tmux" "zsh" "generic docker")
 
 
 if [ $# -eq 0 ]
@@ -17,7 +17,7 @@ else
         exit 1
     fi
 
-    source ./run/$SELECTED_TO_RUN.sh
+    source ./_run/$SELECTED_TO_RUN.sh
 fi
 
 echo "Finished running"

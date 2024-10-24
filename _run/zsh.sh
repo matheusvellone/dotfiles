@@ -16,6 +16,7 @@ if ! [ -x "$(command -v fzf)" ]; then
 fi
 
 sudo apt install bat -y
+mkdir -p .local/bin
 ln -s /usr/bin/batcat ~/.local/bin/bat
 
 # lsd
