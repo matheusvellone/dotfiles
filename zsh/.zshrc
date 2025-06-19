@@ -15,6 +15,7 @@ fi
 
 if [ "$(uname)" = "Darwin" ]; then
   IS_MAC=true
+  set -o AUTO_CD
 elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
   IS_LINUX=true
 fi
@@ -23,7 +24,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/$USER/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -206,7 +207,6 @@ alias windows='sudo grub-reboot "$(grep -i windows /boot/grub/grub.cfg | cut -d 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export GPG_TTY=$TTY
-export BROWSER=/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe
 PATH=$HOME/.local/bin:$PATH
 [[ -s "/home/vellone/.gvm/scripts/gvm" ]] && source "/home/vellone/.gvm/scripts/gvm"
 
