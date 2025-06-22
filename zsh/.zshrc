@@ -151,6 +151,7 @@ alias te='terraform'
 alias d='docker'
 alias dc='docker compose'
 alias hg='history | grep'
+alias dstop='docker ps -aq | xargs docker stop && docker ps -aq | xargs docker rm'
 
 # Aliases
 alias vim='nvim'
