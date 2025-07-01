@@ -146,12 +146,14 @@ setopt histignoredups
 
 # Abbreviation
 alias g='git'
+alias k='kubectl'
 alias t='tmux'
 alias te='terraform'
 alias d='docker'
 alias dc='docker compose'
 alias hg='history | grep'
-alias dstop='docker ps -aq | xargs docker stop && docker ps -aq | xargs docker rm'
+alias b='bun'
+alias br='bun run'
 
 # Aliases
 alias vim='nvim'
@@ -160,7 +162,8 @@ alias ll='ls -lha'
 alias cat='bat'
 alias lua='lua5.3'
 
-alias dclean='docker ps -aq | xargs docker stop; docker ps -aq | xargs docker rm'
+alias dstop='docker ps -aq | xargs docker stop && docker ps -aq | xargs docker rm'
+alias dclean='docker system prune -af --volumes'
 alias my_ip='curl -4 ifconfig.io'
 alias unlock='echo "export BW_SESSION=$(bw unlock --raw)" >> ~/.zprofile && source ~/.zprofile'
 
