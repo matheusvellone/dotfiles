@@ -1,7 +1,7 @@
 [alias]
 	aliases = config --get-regexp alias
 
-	amend = commit --amend --reuse-message=HEAD
+	amend = commit --amend --reuse-message=HEAD -n
 
 	a = add
 	aa = add -A
