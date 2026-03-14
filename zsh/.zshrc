@@ -186,8 +186,33 @@ password() {
     echo "Copied $1 password to clipboard :)"
 }
 
-aws_login() {
-  eval "$(aws configure export-credentials --profile $1 --format env)"
+aws-login() {
+  local creds
+  creds=$(aws configure export-credentials --profile $1 --format env 2>/dev/null)
+  if [ $? -ne 0 ]; then
+    aws sso login --profile $1
+    creds=$(aws configure export-credentials --profile $1 --format env)
+  fi
+  eval "$creds"
+}
+
+assume-role() {
+  OUT=$(aws sts assume-role --role-arn $1 --role-session-name assumed-role);
+
+  export AWS_ACCESS_KEY_ID=$(echo $OUT | jq -r '.Credentials.AccessKeyId');
+  export AWS_SECRET_ACCESS_KEY=$(echo $OUT | jq -r '.Credentials.SecretAccessKey');
+  export AWS_SESSION_TOKEN=$(echo $OUT | jq -r '.Credentials.SessionToken');
+}
+
+unset-envs() {
+  local vars=$(env | sed -n "s/^\($1[^=]*\)=.*/\1/p")
+  if [ -n "$vars" ]; then
+    echo "Unsetting environment variables matching: $1"
+    echo "$vars"
+    unset ${(f)vars}
+  else
+    echo "No environment variables found matching: $1"
+  fi
 }
 
 declare -A ssm_data_profile
