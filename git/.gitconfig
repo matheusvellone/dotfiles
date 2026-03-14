@@ -13,6 +13,7 @@
 	ccm = checkout master
 	ccmn = checkout main
 	ccb = checkout -b
+	ccbb = checkout -B
 	cf = clean -f -d
 	cp = checkout -p
 	d = diff
@@ -31,6 +32,8 @@
 	po = pull origin HEAD
 	por = pull origin HEAD --rebase
 	prune = pull --prune
+	nuke = clean -fdx
+	prenuke = clean -fdxn
 	r = reset
 	rp = reset -p
 	rba = rebase --abort
