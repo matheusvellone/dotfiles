@@ -148,6 +148,7 @@ setopt histignoredups
 alias g='git'
 alias k='kubectl'
 alias t='tmux'
+alias m='mise'
 alias te='terraform'
 alias p='pulumi'
 alias d='docker'
@@ -224,6 +225,17 @@ ssm() {
   aws ssm start-session --region us-east-1 --target ${ssm_data_instance[$1]:-$1} --document-name AWS-StartInteractiveCommand --parameters command="bash"
 }
 
+kube-price() {
+  aws-login $1
+
+  AWS_REGION=us-east-1 eks-node-viewer -resources=cpu,memory -context $1
+}
+
+kube-debug-pod() {
+  local pod_name="debug-$(date +%y%m%d-%H%M%S)"
+  kubectl run --rm -i --tty $pod_name --image=busybox --restart=Never --context $1 -- sh
+}
+
 alias windows='sudo grub-reboot "$(grep -i windows /boot/grub/grub.cfg | cut -d "\"" -f 2)" && sudo reboot now'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -240,7 +252,9 @@ export GPG_TTY=$TTY
 PATH=$HOME/.local/bin:$PATH
 [[ -s "/home/vellone/.gvm/scripts/gvm" ]] && source "/home/vellone/.gvm/scripts/gvm"
 
-[ -f ~/dotfiles/zsh/pagarme.zsh ] && source ~/dotfiles/zsh/pagarme.zsh
+for f in ~/dotfiles/zsh/private/*.zsh; do
+  [ -f "$f" ] && source "$f"
+done
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
